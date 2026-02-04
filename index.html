@@ -27,7 +27,7 @@
 
     <main class="app" id="app">
       <header class="topbar">
-        <div class="badge" aria-label="Fourth Valentine">4th Valentine</div>
+  <div class="badge" aria-label="Fourth Valentine together">4th Valentine together then?</div>
         <button class="ghost" id="toggleMusic" type="button" aria-pressed="false">
           <span class="ghost__icon" aria-hidden="true">♪</span>
           <span class="ghost__text" id="musicLabel">Music: Off</span>
@@ -37,7 +37,7 @@
       <section class="card" id="card" aria-live="polite">
         <!-- Screen 1: Landing -->
         <div class="screen is-active" data-screen="start">
-          <div class="kicker">Dibbu-approved corner of the internet</div>
+          <div class="kicker">DIBHSU TURNING 4 SOON</div>
           <h1 class="title">
             Hey <span class="name" id="herName">Darshana</span>,
             <br />will you be my Valentine?
@@ -51,43 +51,52 @@
             <button class="btn primary" id="beginBtn" type="button">
               Start, Dibbu
             </button>
-            <button class="btn" id="setNameBtn" type="button">Change names</button>
           </div>
 
-          <div class="hint">Tip: This works great on mobile.</div>
+          <div class="hint">You’re my ball, my babu-human, my system. And you’re unreal.</div>
         </div>
 
         <!-- Screen 2: Journey -->
         <div class="screen" data-screen="journey">
           <h2 class="sectionTitle">A quick little us</h2>
           <p class="lead">
-            As this year ends, I honestly cant stop smiling because dibbu mere saath thi,
-            and that made everything 2025 times better.
+        I love you so much, Dibbu.
+            Our friendship turned into this beautiful relationship, and I’m so grateful
+            that it’s you.
           </p>
 
           <ul class="timeline" id="timeline">
             <li class="moment">
               <div class="moment__dot" aria-hidden="true"></div>
               <div class="moment__content">
-                <div class="moment__title">The beginning</div>
-                <div class="moment__text">The day “us” started feeling like home.</div>
+                <div class="moment__title">2025</div>
+                <div class="moment__text"> I honestly can’t stop smiling because dibbu mere saath thi, and that made everything 2025 times better. Every moment with you this year was maxa moment , the laughs, the silence, the chaos, the calm, literally sab kuch. I feel like we didn’t only spend time saath mein, we lived it together.</div>
               </div>
             </li>
             <li class="moment">
               <div class="moment__dot" aria-hidden="true"></div>
               <div class="moment__content">
-                <div class="moment__title">The little traditions</div>
+                <div class="moment__title">Growth + Babuship</div>
                 <div class="moment__text">
-                  Laughs, late-night talks, and the way you make ordinary days glow.
+                  It wasn’t just about memories.
+It was about growth.
+
+We levelled up in life, and most importantly, in us, in our babuship.
+There were days that tested us, days that asked a lot from us… but we stood strong.
+We chose to understand each other.
+We chose to stay playful, to laugh, to be us.
+
+And that?
+That makes me incredibly proud of us 🤍
                 </div>
               </div>
             </li>
             <li class="moment">
               <div class="moment__dot" aria-hidden="true"></div>
               <div class="moment__content">
-                <div class="moment__title">Right now</div>
+                <div class="moment__title">Right now in 2026</div>
                 <div class="moment__text">
-                  Me, choosing you — again, and again, and again.
+                  Me, wanting to choose you — again, and again, and again.
                 </div>
               </div>
             </li>
@@ -105,7 +114,7 @@
           <h2 class="bigQuestion">Will you be my Valentine?</h2>
           <p class="lead">
             Like, officially. Like, dibbu-dibbi forever vibes.
-            Like, I made a whole website levels.
+            Like, I made a whole website levels.
           </p>
 
           <div class="choice" id="choiceRow">
@@ -117,7 +126,6 @@
 
           <div class="ctaRow">
             <button class="btn" data-goto="journey" type="button">Read that again</button>
-            <button class="btn" id="customizeBtn" type="button">Customize</button>
           </div>
         </div>
 
@@ -154,77 +162,9 @@
       </footer>
     </main>
 
-    <!-- dialogs -->
-    <dialog class="modal" id="nameModal">
-      <form method="dialog" class="modal__card">
-        <div class="modal__title">Make it more personal</div>
-        <p class="modal__text">Fill these in (you can leave any blank).</p>
-
-        <label class="field">
-          <span>Her name</span>
-          <input id="herNameInput" type="text" autocomplete="off" placeholder="e.g., Ananya" />
-        </label>
-        <label class="field">
-          <span>Your name</span>
-          <input id="yourNameInput" type="text" autocomplete="off" placeholder="e.g., Dave" />
-        </label>
-
-        <div class="modal__row">
-          <button class="btn" value="cancel">Cancel</button>
-          <button class="btn primary" id="saveNamesBtn" value="default">Save</button>
-        </div>
-      </form>
-    </dialog>
-
-    <dialog class="modal" id="customModal">
-      <form method="dialog" class="modal__card">
-        <div class="modal__title">Customize the story</div>
-        <p class="modal__text">
-          Replace the timeline text with your real journey. Keep it short and sweet.
-        </p>
-
-        <label class="field">
-          <span>Moment 1 title</span>
-          <input id="m1t" type="text" placeholder="The beginning" />
-        </label>
-        <label class="field">
-          <span>Moment 1 text</span>
-          <input id="m1b" type="text" placeholder="The day “us” started feeling like home." />
-        </label>
-
-        <label class="field">
-          <span>Moment 2 title</span>
-          <input id="m2t" type="text" placeholder="The little traditions" />
-        </label>
-        <label class="field">
-          <span>Moment 2 text</span>
-          <input id="m2b" type="text" placeholder="Laughs, late-night talks..." />
-        </label>
-
-        <label class="field">
-          <span>Moment 3 title</span>
-          <input id="m3t" type="text" placeholder="Right now" />
-        </label>
-        <label class="field">
-          <span>Moment 3 text</span>
-          <input id="m3b" type="text" placeholder="Me, choosing you — again..." />
-        </label>
-
-        <label class="field">
-          <span>Celebration line</span>
-          <input id="yayCustom" type="text" placeholder="You just made my whole heart do a backflip." />
-        </label>
-
-        <div class="modal__row">
-          <button class="btn" value="cancel">Cancel</button>
-          <button class="btn primary" id="saveCustomBtn" value="default">Save</button>
-        </div>
-      </form>
-    </dialog>
-
     <audio id="bgm" preload="none" loop>
       <!-- Tiny embedded loop (very small). You can replace with your own file in /assets and update src. -->
-      <source src="./assets/bgm.mp3" type="audio/mpeg" />
+  <source src="./Tumse Hi Tumse Ab Se Koi Khushi Nahi V1 Anjaana Anjaani 320 Kbps (mp3cut.net).mp3" type="audio/mpeg" />
     </audio>
 
     <script src="./script.js" defer></script>

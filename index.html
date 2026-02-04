@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ff4d8d" />
+    <title>Will you be my Valentine?</title>
+    <meta
+      name="description"
+      content="A sweet little Valentine website — made with love."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg">
+      <div class="grain" aria-hidden="true"></div>
+      <div class="hearts" aria-hidden="true"></div>
+    </div>
+
+    <main class="app" id="app">
+      <header class="topbar">
+        <div class="badge" aria-label="Fourth Valentine">4th Valentine</div>
+        <button class="ghost" id="toggleMusic" type="button" aria-pressed="false">
+          <span class="ghost__icon" aria-hidden="true">♪</span>
+          <span class="ghost__text" id="musicLabel">Music: Off</span>
+        </button>
+      </header>
+
+      <section class="card" id="card" aria-live="polite">
+        <!-- Screen 1: Landing -->
+        <div class="screen is-active" data-screen="start">
+          <div class="kicker">Dibbu-approved corner of the internet</div>
+          <h1 class="title">
+            Hey <span class="name" id="herName">Darshana</span>,
+            <br />will you be my Valentine?
+          </h1>
+          <p class="subtitle">
+            Simple. Soft. Just us.
+            <span class="tiny">(Dibbi, please read till the end.)</span>
+          </p>
+
+          <div class="ctaRow">
+            <button class="btn primary" id="beginBtn" type="button">
+              Start, Dibbu
+            </button>
+            <button class="btn" id="setNameBtn" type="button">Change names</button>
+          </div>
+
+          <div class="hint">Tip: This works great on mobile.</div>
+        </div>
+
+        <!-- Screen 2: Journey -->
+        <div class="screen" data-screen="journey">
+          <h2 class="sectionTitle">A quick little us</h2>
+          <p class="lead">
+            As this year ends, I honestly cant stop smiling because dibbu mere saath thi,
+            and that made everything 2025 times better.
+          </p>
+
+          <ul class="timeline" id="timeline">
+            <li class="moment">
+              <div class="moment__dot" aria-hidden="true"></div>
+              <div class="moment__content">
+                <div class="moment__title">The beginning</div>
+                <div class="moment__text">The day “us” started feeling like home.</div>
+              </div>
+            </li>
+            <li class="moment">
+              <div class="moment__dot" aria-hidden="true"></div>
+              <div class="moment__content">
+                <div class="moment__title">The little traditions</div>
+                <div class="moment__text">
+                  Laughs, late-night talks, and the way you make ordinary days glow.
+                </div>
+              </div>
+            </li>
+            <li class="moment">
+              <div class="moment__dot" aria-hidden="true"></div>
+              <div class="moment__content">
+                <div class="moment__title">Right now</div>
+                <div class="moment__text">
+                  Me, choosing you — again, and again, and again.
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <div class="ctaRow">
+            <button class="btn" data-next type="button">Back to butterflies</button>
+            <button class="btn primary" data-goto="question" type="button">Ok, ask me</button>
+          </div>
+        </div>
+
+        <!-- Screen 3: The Question -->
+        <div class="screen" data-screen="question">
+          <div class="pill">Important question</div>
+          <h2 class="bigQuestion">Will you be my Valentine?</h2>
+          <p class="lead">
+            Like, officially. Like, dibbu-dibbi forever vibes.
+            Like, I made a whole website levels.
+          </p>
+
+          <div class="choice" id="choiceRow">
+            <button class="btn primary" id="yesBtn" type="button">Yes</button>
+            <button class="btn danger" id="noBtn" type="button">No</button>
+          </div>
+
+          <p class="micro" id="noHint" aria-live="polite"></p>
+
+          <div class="ctaRow">
+            <button class="btn" data-goto="journey" type="button">Read that again</button>
+            <button class="btn" id="customizeBtn" type="button">Customize</button>
+          </div>
+        </div>
+
+        <!-- Screen 4: Celebration -->
+        <div class="screen" data-screen="yay">
+          <div class="confetti" aria-hidden="true"></div>
+          <h2 class="yayTitle">YAYYYYY!</h2>
+          <p class="lead" id="yayLine">
+            Tum mere saath ho  and thats my biggest win of this year.
+          </p>
+
+          <div class="gift">
+            <div class="gift__icon" aria-hidden="true">❤</div>
+            <div class="gift__text">
+              Screenshot this page and send it to me so I can pretend I’m cool
+              and not melting.
+            </div>
+          </div>
+
+          <div class="ctaRow">
+            <button class="btn primary" id="replayBtn" type="button">Replay</button>
+            <button class="btn" id="shareBtn" type="button">Copy link</button>
+          </div>
+
+          <div class="signature">
+            Made with love by <span id="yourName">Mehal</span>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span class="footer__left">Built for one person. Delivered with butterflies.</span>
+        <span class="footer__right" id="today"></span>
+      </footer>
+    </main>
+
+    <!-- dialogs -->
+    <dialog class="modal" id="nameModal">
+      <form method="dialog" class="modal__card">
+        <div class="modal__title">Make it more personal</div>
+        <p class="modal__text">Fill these in (you can leave any blank).</p>
+
+        <label class="field">
+          <span>Her name</span>
+          <input id="herNameInput" type="text" autocomplete="off" placeholder="e.g., Ananya" />
+        </label>
+        <label class="field">
+          <span>Your name</span>
+          <input id="yourNameInput" type="text" autocomplete="off" placeholder="e.g., Dave" />
+        </label>
+
+        <div class="modal__row">
+          <button class="btn" value="cancel">Cancel</button>
+          <button class="btn primary" id="saveNamesBtn" value="default">Save</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog class="modal" id="customModal">
+      <form method="dialog" class="modal__card">
+        <div class="modal__title">Customize the story</div>
+        <p class="modal__text">
+          Replace the timeline text with your real journey. Keep it short and sweet.
+        </p>
+
+        <label class="field">
+          <span>Moment 1 title</span>
+          <input id="m1t" type="text" placeholder="The beginning" />
+        </label>
+        <label class="field">
+          <span>Moment 1 text</span>
+          <input id="m1b" type="text" placeholder="The day “us” started feeling like home." />
+        </label>
+
+        <label class="field">
+          <span>Moment 2 title</span>
+          <input id="m2t" type="text" placeholder="The little traditions" />
+        </label>
+        <label class="field">
+          <span>Moment 2 text</span>
+          <input id="m2b" type="text" placeholder="Laughs, late-night talks..." />
+        </label>
+
+        <label class="field">
+          <span>Moment 3 title</span>
+          <input id="m3t" type="text" placeholder="Right now" />
+        </label>
+        <label class="field">
+          <span>Moment 3 text</span>
+          <input id="m3b" type="text" placeholder="Me, choosing you — again..." />
+        </label>
+
+        <label class="field">
+          <span>Celebration line</span>
+          <input id="yayCustom" type="text" placeholder="You just made my whole heart do a backflip." />
+        </label>
+
+        <div class="modal__row">
+          <button class="btn" value="cancel">Cancel</button>
+          <button class="btn primary" id="saveCustomBtn" value="default">Save</button>
+        </div>
+      </form>
+    </dialog>
+
+    <audio id="bgm" preload="none" loop>
+      <!-- Tiny embedded loop (very small). You can replace with your own file in /assets and update src. -->
+      <source src="./assets/bgm.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>

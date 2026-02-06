@@ -28,10 +28,23 @@
     <main class="app" id="app">
       <header class="topbar">
   <div class="badge" aria-label="Fourth Valentine together">4th Valentine together then?</div>
-        <button class="ghost" id="toggleMusic" type="button" aria-pressed="false">
-          <span class="ghost__icon" aria-hidden="true">♪</span>
-          <span class="ghost__text" id="musicLabel">Music: Off</span>
-        </button>
+        <div class="topActions">
+          <button
+            class="ghost emojiBtn"
+            id="sorryBtn"
+            type="button"
+            aria-haspopup="dialog"
+            aria-controls="sorryModal"
+            aria-label="Open apology note"
+            title="A little note"
+          >
+            😢
+          </button>
+          <button class="ghost" id="toggleMusic" type="button" aria-pressed="false">
+            <span class="ghost__icon" aria-hidden="true">♪</span>
+            <span class="ghost__text" id="musicLabel">Music: Off</span>
+          </button>
+        </div>
       </header>
 
       <section class="card" id="card" aria-live="polite">
@@ -161,6 +174,34 @@ That makes me incredibly proud of us 🤍
         <span class="footer__right" id="today"></span>
       </footer>
     </main>
+
+    <dialog class="modal" id="sorryModal" aria-labelledby="sorryTitle">
+      <form method="dialog" class="modal__card">
+        <div class="modal__title" id="sorryTitle">Im sorry  truly.</div>
+        <p class="modal__text">
+          Im really sorry for last night.
+          <br /><br />
+          When I was teaching you how to drive, I wasnt kind. I focused only on what you
+          were doing wrong, and I forgot to appreciate how hard you were trying. Thats
+          not fair to you.
+          <br /><br />
+          What hurts me the most is that instead of pausing, understanding you, and fixing
+          my mistake I tried to justify myself. And in doing that, I spoke rudely. I
+          never want to be that person with you.
+          <br /><br />
+          You deserved patience. You deserved encouragement. You deserved love in that
+          moment  and I didnt show it properly.
+          <br /><br />
+          Im learning. And I promise Ill do better  not just say it, but show it.
+          <br /><br />
+          I love you. Always.
+        </p>
+
+        <div class="modal__row">
+          <button class="btn primary" value="default">Close</button>
+        </div>
+      </form>
+    </dialog>
 
     <audio id="bgm" preload="none" loop>
       <!-- Tiny embedded loop (very small). You can replace with your own file in /assets and update src. -->

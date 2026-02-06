@@ -312,6 +312,16 @@ function initMusic() {
   update();
 }
 
+function initSorryModal() {
+  const btn = qs("#sorryBtn");
+  const modal = qs("#sorryModal");
+  if (!btn || !modal) return;
+
+  btn.addEventListener("click", () => {
+    if (typeof modal.showModal === "function") modal.showModal();
+  });
+}
+
 function init() {
   loadFromHash();
   render();
@@ -321,6 +331,7 @@ function init() {
   initYesButton();
   initShare();
   initMusic();
+  initSorryModal();
 
   // allow deep-link via hash (? not used to avoid server config)
   setScreen("start");

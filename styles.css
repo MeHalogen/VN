@@ -73,6 +73,37 @@ body{
   line-height:1;
 }
 
+.emojiBtn{position:relative}
+.emojiBtn::after{
+  content: attr(data-tip);
+  position:absolute;
+  right:0;
+  top: calc(100% + 10px);
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(0,0,0,.10);
+  box-shadow: 0 14px 30px rgba(0,0,0,.12);
+  color: rgba(0,0,0,.72);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  z-index: 50;
+  opacity: 0;
+  transform: translateY(-4px);
+  pointer-events: none;
+  transition: opacity .12s ease, transform .12s ease;
+}
+.emojiBtn:hover::after,
+.emojiBtn:focus-visible::after{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (hover: none){
+  .emojiBtn::after{display:none}
+}
+
 .badge{
   display:inline-flex;
   align-items:center;
